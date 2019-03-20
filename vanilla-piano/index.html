@@ -174,7 +174,13 @@
         //EXAMPLE:
         // document.querySelector('audio[data-key="65"]');
         tone.currentTime = 0;
+        pianoKey.classList.add("pressed");
         tone.play();
+        setTimeout(function() {
+            pianoKey.classList.remove("pressed");
+        }, 300);
+        //Play this sequence:
+        //GGH3
     })
 </script>
 

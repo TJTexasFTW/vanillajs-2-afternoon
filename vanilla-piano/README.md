@@ -142,7 +142,7 @@ In this step we'll add an animation to make our keys work when their associated 
   - If you try it now, you'll notice that each time a key on the keyboard is pressed, its associated pianoKey is changed; however, it never changes back when the key is no longer active!
   - After our tone plays, remove the class `pressed` from our `pianoKey` element.
   - You'll now notice that it appears that our key never receives the class.
-    - This occurs because the class is being added an removed almost instantly.
+    - This occurs because the class is being added and removed almost instantly.
     - To slow this down, wrap the class removal in a setTimeout, to be removed after 300ms.
   - You should now have keys that appear `pressed` when a note is played.
 - You should also have a fully functional piano that plays notes and gives the appearance of pressed keys. Feel free to remap the keys using the `data-key` attribute and the associated `keyCode` from each key on the keyboard.
