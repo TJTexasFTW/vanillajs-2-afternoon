@@ -69,20 +69,21 @@
     }
 
 // let mouseMove = window.addEventListener("mousemove", mouseXY()); 
-window.addEventListener('mousemove', function mouseXY(e) {
+window.addEventListener('mousemove', function(e) {
     mousePosition.x = e.pageX;
     mousePosition.y = e.pageY;
 
     console.log(e.pageX, e.pageY);
     });
 
+// function draw() {
+//     return setInterval(function cb(), 1);
+//     container.appendChild(ball);
+//     }
 function draw() {
-    return setInterval(cb, 1);
-    container.appendChild(ball);
-    }
-
-function cb() {
+    return setInterval(function() {
     let container = document.getElementById("wrap");
+    
     const color = `background:rgb(${getRandomNumber(
 0,
   255
@@ -97,20 +98,28 @@ const top = `top:${getRandomNumber(
   mousePosition.y - ballSize,
   mousePosition.y
 )}px; `;
+
 const style = `${left}${top}${color}${size}`;
 
 let ball = document.createElement("div");
-ball.classList("ball");
+ball.classList.add("ball");
 ball.style = style;
 
 ball.addEventListener("animationend", function(e) {
     e.target.remove();
 });
-};
+container.appendChild(ball);
+    
 
+}, 1);
+}
+window.addEventListener("mouseover", function(){
+    drawId = draw();
+});
 
-
-
+window.addEventListener("mouseout", function(){
+    clearInterval(drawId);
+});
 
 </script>
 
