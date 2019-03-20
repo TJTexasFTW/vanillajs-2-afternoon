@@ -68,6 +68,15 @@
         return Math.round(Math.random() * (max - min + 1)) + min;
     }
 
+// let mouseMove = window.addEventListener("mousemove", mouseXY()); 
+window.addEventListener('mousemove', function mouseXY(e) {
+    mousePosition.x = e.pageX;
+    mousePosition.y = e.pageY;
+
+    console.log(e.pageX, e.pageY);
+    });
+// function mouseXY(event) {
+
 
 </script>
 
